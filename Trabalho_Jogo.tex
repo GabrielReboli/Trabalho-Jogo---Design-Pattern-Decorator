@@ -1,0 +1,63 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+
+\title{Jogo de Batalha com Padrão Decorator}
+\author{Projeto de Programação Orientada a Objetos}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introdução}
+Este projeto é uma implementação de um jogo de combate entre guerreiros utilizando o padrão de design \textbf{Decorator}. O objetivo é aplicar o conceito de composição de objetos para adicionar habilidades e melhorias aos personagens de maneira flexível e extensível, sem modificar a estrutura original das classes.
+
+\section*{Estrutura do Projeto}
+O projeto está estruturado nas seguintes classes principais:
+
+\subsection*{Classes Base e de Personagens}
+\begin{itemize}
+    \item \textbf{Personagem.cs}: Classe base abstrata que define atributos e métodos essenciais dos personagens.
+    \item \textbf{Guerreiro.cs}: Classe concreta que representa o guerreiro padrão.
+    \item \textbf{Arqueiro.cs e Ladino.cs}: Classes de personagens adicionais com características próprias.
+\end{itemize}
+
+\subsection*{Decoradores}
+\begin{itemize}
+    \item \textbf{PersonagemDecorator.cs}: Classe base para todos os decoradores.
+    \item \textbf{EspadaFlamejante.cs}: Decorador que aumenta o ataque do guerreiro.
+    \item \textbf{ArmaduraDeFerro.cs}: Decorador que aumenta a defesa do guerreiro.
+    \item \textbf{AnelDecorator.cs}: Decorador que adiciona a habilidade de refletir dano ao guerreiro.
+    \item \textbf{ArcoDivino.cs}: Decorador que incrementa atributos específicos do Arqueiro.
+    \item \textbf{EsferaDePoder.cs}: Classe que representa esferas de poder coletadas pelo guerreiro para aumentar o poder reflexivo do anel.
+\end{itemize}
+
+\subsection*{Gerenciamento de Combate}
+\begin{itemize}
+    \item \textbf{Duelo.cs}: Classe que gerencia o combate em turnos entre dois personagens, aplicando as mecânicas de crítico, esquiva e dano reflexivo.
+    \item \textbf{Program.cs}: Classe principal que configura os personagens e inicia o duelo.
+\end{itemize}
+
+\section*{Funcionalidades Implementadas}
+\begin{itemize}
+    \item \textbf{Combate em Turnos}: Os guerreiros alternam turnos de ataque com a possibilidade de crítico, esquiva e reflexo de dano.
+    \item \textbf{Aplicação de Decoradores}: Permite modificar e adicionar habilidades a um personagem, como aumentar o ataque, defesa ou refletir dano.
+    \item \textbf{Reflexo de Dano}: O anel permite refletir 10\% do dano, incrementado em 10\% para cada esfera de poder coletada até o limite de 100\%.
+\end{itemize}
+
+\section*{Detalhes de Implementação}
+Cada classe foi implementada com base nos princípios de orientação a objetos e boas práticas de design, visando flexibilidade e extensibilidade. O padrão \textbf{Decorator} permite que novos atributos e funcionalidades sejam aplicados dinamicamente a instâncias de personagens sem modificar a estrutura original das classes.
+
+\section*{Exemplo de Saída}
+A execução do programa exibe o combate entre dois personagens, incluindo detalhes como ataques, uso de crítico, esquivas e reflexo de dano com base nas habilidades adquiridas pelos personagens durante a batalha.
+
+\section*{Conclusão}
+O projeto demonstra a eficácia do padrão \textbf{Decorator} ao permitir que novos comportamentos sejam aplicados aos personagens de forma modular e extensível. Este trabalho cumpre os requisitos de flexibilidade e uso avançado de Programação Orientada a Objetos, sendo uma excelente aplicação prática dos conceitos aprendidos.
+
+\end{document}
